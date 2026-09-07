@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --f-family-inter: "Inter", sans-serif;
+  --f-family-tight: "Inter Tight", sans-serif;
+
+  --bg-color: #14151d;
+  --bg-tertiary: #23242c;
+  --bg-highlights: #bdb4fa;
+
+  --content-brand: #9282fa;
+  --content-primary: #ffffff;
+  --content-secondary: #98959d;
+  --content-tertiary: #666666;
+
+  --border-primary: #3e3c41;
+  --border-secondary: #86818c;
+  --border-divisor: #353339;
+  --title: bold 1.5rem/2rem var(--f-family-tight);
+
+  --p-medium: 0.875rem/1.5rem var(--f-family-inter);
+  --p-small: 0.75rem/1rem var(--f-family-inter);
+  --label-large: bold 1rem/1.5rem var(--f-family-inter);
+  --label-medium: bold 0.875rem/1.5rem var(--f-family-inter);
+  --label-small: bold 0.75rem/1rem var(--f-family-inter);
+  --link: 0.75rem/1rem var(--f-family-inter);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-color);
+  color: var(--content-primary);
+  font-family: var(--f-family-inter);
+  min-width: 390px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 65%;
+  min-width: 350px;
+  max-width: 1440px;
+  gap: 2rem;
+  padding: 80px;
+}
+
+.logo {
+  background-color: #2e2c30;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 0.75rem;
+  height: 3rem;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+h2 {
+  font: var(--title);
+}
+
+h3 {
+  font: var(--label-large);
+}
+
+p {
+  font: var(--p-medium);
+  color: var(--content-tertiary);
+}
+
+.new-schedule-button {
+  background-color: var(--content-brand);
+  border: none;
+  outline: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font: var(--label-large);
+  color: var(#050505);
+  animation: 3s ease infinite pulsar;
+  transition:
+    scale 0.2s,
+    background-color 0.2s;
+
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  height: 3rem;
+  width: fit-content;
+}
+
+.new-schedule-button:hover {
+  scale: 1.1;
+  background-color: var(--bg-highlights);
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    padding: 0;
+  }
+
+  body {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .new-schedule-button {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@keyframes pulsar {
+  0%,
+  100% {
+    box-shadow: 0 0 20px 5px hsla(248, 92%, 75%, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 20px 5px hsla(248, 92%, 75%, 0.438);
+  }
+}
